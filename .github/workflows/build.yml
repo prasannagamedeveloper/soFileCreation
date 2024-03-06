@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    cache: {} # Disable cache
 
     steps:
       - name: Checkout Repository
@@ -19,6 +20,10 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
+      - name: Configure Gradle Wrapper (Optional)
+        # Uncomment if your project doesn't already have a gradlew file
+        # or if you need to ensure wrapper configuration
+        run: gradle wrapper
+
       - name: Build Android Library
-        run: |
-          gradlew assemble  # Or ./gradlew assemble if needed
+        run: gradlew assemble

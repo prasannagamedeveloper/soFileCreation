@@ -8,22 +8,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    cache: {} # Disable cache
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'adopt'
-          java-version: '11'
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
 
-      - name: Configure Gradle Wrapper (Optional)
-        # Uncomment if your project doesn't already have a gradlew file
-        # or if you need to ensure wrapper configuration
-        run: gradle wrapper
-
-      - name: Build Android Library
-        run: gradlew assemble
+    - name: Build Android Library
+      run: |
+        ./gradlew assemble
+      working-directory: C:\Prasanna\AndroidSOFileGitAction\soFileCreation
+      shell: powershell

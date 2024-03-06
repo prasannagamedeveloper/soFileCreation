@@ -10,17 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Set up Java
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'adopt'
-        java-version: '11'
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
 
-    - name: Build Android Library
-      run: |
-        ./gradlew assemble
-      working-directory: C:\Prasanna\AndroidSOFileGitAction\soFileCreation
-      shell: powershell
+      - name: Build Android Library
+        run: |
+          gradlew assemble  # Or ./gradlew assemble if needed

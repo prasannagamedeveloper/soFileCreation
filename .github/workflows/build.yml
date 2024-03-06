@@ -22,4 +22,4 @@ jobs:
     - name: Build Android Library
       run: |
         ./gradlew assemble
-      working-directory: C:/Prasanna/AndroidSOFileGitAction/soFileCreation
+      working-directory: C:\Prasanna\AndroidSOFileGitAction\soFileCreation

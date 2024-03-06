@@ -21,5 +21,6 @@ jobs:
 
     - name: Build Android Library
       run: |
-        ./gradlew assemble
+        gradlew assemble
       working-directory: C:\Prasanna\AndroidSOFileGitAction\soFileCreation
+      shell: cmd

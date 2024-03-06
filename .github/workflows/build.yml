@@ -10,17 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Set up Java
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'adopt'
-        java-version: '11'
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
 
-    - name: Build Android Library
-      run: |
-        ./gradlew assemble
-      working-directory: C:\Prasanna\AndroidSOFileGitAction\soFileCreation
-      shell: cmd
+      - name: Build Android Library
+        # Assuming gradlew is in the project directory
+        run: gradlew assemble # Or ./gradlew assemble if needed
+
+        # If gradlew is in a different location adjust the path:
+        # working-directory: path/to/directory/with/gradlew
+        # gradlew assemble
